@@ -1,0 +1,24 @@
+User-agent: *
+Allow: /
+Sitemap: https://kadayadibird.vercel.app/sitemap.xml
+
+# Disallow sensitive paths
+Disallow: /api/
+Disallow: /admin/
+Disallow: /.env
+Disallow: /src/
+
+# Google
+User-agent: Googlebot
+Allow: /
+
+# Bing
+User-agent: Bingbot
+Allow: /
+
+# Social media crawlers
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /

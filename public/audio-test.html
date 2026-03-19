@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Audio Test</title>
+</head>
+<body>
+    <h1>Audio File Test</h1>
+    <div id="results"></div>
+    
+    <h2>Test Individual Files:</h2>
+    <div id="tests"></div>
+    
+    <script>
+        const audioFiles = [
+            { name: 'Actor 1', path: '/sounds/actor1.mp3' },
+            { name: 'Actor 2', path: '/sounds/actor2.mp3' },
+            { name: 'Actor 3', path: '/sounds/actor3.mp3' },
+            { name: 'Actor 4', path: '/sounds/actor4.mp3' },
+            { name: 'Actor 5', path: '/sounds/actor5.mp3' },
+            { name: 'Actor 6', path: '/sounds/actor6.mp3' },
+            { name: 'Actor 7', path: '/sounds/actor7.mp3' },
+            { name: 'Actor 8', path: '/sounds/actor8.mp3' },
+            { name: 'Actor 9', path: '/sounds/actor9.mp3' },
+            { name: 'Actor 10', path: '/sounds/actor10.mp3' },
+            { name: 'Game Over', path: '/sounds/game-over.mp3' },
+            { name: 'Pass', path: '/sounds/pass.mp3' },
+            { name: 'Pass Through', path: '/sounds/pass-through.mp3' }
+        ];
+
+        const results = document.getElementById('results');
+        const tests = document.getElementById('tests');
+        
+        audioFiles.forEach(file => {
+            const div = document.createElement('div');
+            const button = document.createElement('button');
+            button.textContent = `Play ${file.name}`;
+            button.style.margin = '5px';
+            button.style.padding = '10px';
+            
+            const audio = new Audio();
+            
+            audio.addEventListener('loadeddata', () => {
+                div.innerHTML = `✅ ${file.name} (${file.path}) - Loaded`;
+                div.style.color = 'green';
+                
+                button.onclick = () => {
+                    audio.currentTime = 0;
+                    audio.play().then(() => {
+                        console.log(`Playing ${file.name}`);
+                    }).catch(err => {
+                        alert(`Error playing ${file.name}: ${err.message}`);
+                    });
+                };
+                tests.appendChild(button);
+            });
+            
+            audio.addEventListener('error', (e) => {
+                div.innerHTML = `❌ ${file.name} (${file.path}) - ERROR`;
+                div.style.color = 'red';
+                button.disabled = true;
+                button.style.opacity = '0.5';
+                tests.appendChild(button);
+            });
+            
+            results.appendChild(div);
+            audio.src = file.path;
+            audio.load();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "KADAYADI BIRD",
+  "short_name": "Bird Buddies",
+  "description": "A fun flappy bird game with character selection",
+  "theme_color": "#3b82f6",
+  "background_color": "#3b82f6",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/vite.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "cache_policy": {
+    "images": "cache-first",
+    "sounds": "cache-first"
+  }
+}
