@@ -14,7 +14,7 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)](https://firebase.google.com/)
 
-[🚀 Live Demo](#) | [📦 Installation](#-installation) | [🤝 Contributing](#-contributing)
+[🚀 Live Demo](https://kadayadibird1.vercel.app) | [📦 Installation](#-installation) | [🤝 Contributing](#-contributing)
 
 </div>
 
